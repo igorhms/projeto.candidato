@@ -59,6 +59,26 @@ public class simula {
 		System.out.printf("Pontos por experiência: %d%n", pontoExperiencia);
 		System.out.println();
 		
+		System.out.println("Você está habilitado para o(s) seguinte(s) cargo(s):");		
+		if (pontoExperiencia >= 40 && pontoEscolaridade >= 30 && viajar.contains("S")){
+			System.out.println("GERENTE");
+			System.out.println("ANALISTA");
+		}
+		else if (pontoExperiencia >= 20 && pontoEscolaridade >= 30 && habilitacao.contains("S") && viajar.contains("N")){
+			System.out.println("ASSISTENTE");
+			System.out.println("GERENTE");
+		}	
+		else if (pontoExperiencia >= 20 && pontoEscolaridade >= 30 && viajar.contains("N") && habilitacao.contains("N")){
+			System.out.println("GERENTE");
+		}
+		else if (pontoEscolaridade >= 20 && habilitacao.contains("S")){
+			System.out.println("ASSISTENTE");	
+		}
+		else {
+			System.out.println("Infelizmente seu perfil não atente a empresa");
+		}
+		
+		
 		sc.close();
 	}
 
